@@ -53,7 +53,7 @@ def get_all_hubmap_dataset_uuids(nexus_token):
 ##################################################################################################################################
 # Published data
 
-async def fetch_published_dataset_metadata_parallel(published_dataset_uuids, max_requests_per_sec):
+async def fetch_published_dataset_metadata_parallel(published_dataset_uuids, max_requests_per_sec, nexus_token):
     tasks = []
     sem = asyncio.Semaphore(max_requests_per_sec)
 
@@ -67,13 +67,13 @@ async def fetch_published_dataset_metadata_parallel(published_dataset_uuids, max
         return await responses
 
 
-def get_published_hubmap_metadata_parallel(nexus_token, published_uuids):    
+def get_published_hubmap_metadata_parallel(nexus_token, published_uuids, max_requests_per_sec):    
     all_published_dataset_metadata = []
     # failed_unpublished_fetches = []
     
     for i in tqdm(range(0, len(published_uuids), max_requests_per_sec), desc="Fetching published data parallel"):
         loop = asyncio.get_event_loop()
-        future = asyncio.ensure_future(fetch_published_dataset_metadata_parallel(published_uuids[i:i+max_requests_per_sec], max_requests_per_sec))
+        future = asyncio.ensure_future(fetch_published_dataset_metadata_parallel(published_uuids[i:i+max_requests_per_sec], max_requests_per_sec, nexus_token))
         all_published_dataset_metadata += loop.run_until_complete(future)
   
     return all_published_dataset_metadata
@@ -83,7 +83,7 @@ def get_published_hubmap_metadata_parallel(nexus_token, published_uuids):
 ##################################################################################################################################
 # Unpublished data
 
-async def fetch_unpublished_dataset_metadata_parallel(unpublished_dataset_uuids, max_requests_per_sec):
+async def fetch_unpublished_dataset_metadata_parallel(unpublished_dataset_uuids, max_requests_per_sec, nexus_token):
     tasks = []
     headers = {
         'Authorization': 'Bearer ' + nexus_token
@@ -100,13 +100,13 @@ async def fetch_unpublished_dataset_metadata_parallel(unpublished_dataset_uuids,
         return await responses
 
 
-def get_unpublished_hubmap_metadata_parallel(nexus_token, unpublished_uuids):
+def get_unpublished_hubmap_metadata_parallel(nexus_token, unpublished_uuids, max_requests_per_sec):
     all_unpublished_dataset_metadata = []
     # failed_unpublished_fetches = []
     
     for i in tqdm(range(0, len(unpublished_uuids), max_requests_per_sec), desc="Fetching unpublished data parallel"):
         loop = asyncio.get_event_loop()
-        future = asyncio.ensure_future(fetch_unpublished_dataset_metadata_parallel(unpublished_uuids[i:i+max_requests_per_sec], max_requests_per_sec))
+        future = asyncio.ensure_future(fetch_unpublished_dataset_metadata_parallel(unpublished_uuids[i:i+max_requests_per_sec], max_requests_per_sec, nexus_token))
         all_unpublished_dataset_metadata += loop.run_until_complete(future)
   
     return all_unpublished_dataset_metadata
@@ -119,8 +119,8 @@ def get_unpublished_hubmap_metadata_parallel(nexus_token, unpublished_uuids):
 def get_all_hubmap_metadata(filename, max_requests_per_sec, nexus_token):
     dataset_uuids = get_all_hubmap_dataset_uuids(nexus_token)
     
-    published_dataset_metadata_list   = get_published_hubmap_metadata_parallel(nexus_token, dataset_uuids["published_uuids"])
-    unpublished_dataset_metadata_list = get_unpublished_hubmap_metadata_parallel(nexus_token, dataset_uuids["unpublished_uuids"])
+    published_dataset_metadata_list   = get_published_hubmap_metadata_parallel(nexus_token, dataset_uuids["published_uuids"], max_requests_per_sec)
+    unpublished_dataset_metadata_list = get_unpublished_hubmap_metadata_parallel(nexus_token, dataset_uuids["unpublished_uuids"], max_requests_per_sec)
     
     published_dataset_metadata   = {dt['uuid'] : dt for dt in published_dataset_metadata_list} 
     unpublished_dataset_metadata = {dt['uuid'] : dt for dt in unpublished_dataset_metadata_list}
@@ -149,7 +149,6 @@ if __name__ == '__main__':
     nexus_token = configs["nexus_token"]
 
     get_all_hubmap_metadata(filename, max_requests_per_sec, nexus_token)
-
 
     # Arguments
     # 1. Output Filename
