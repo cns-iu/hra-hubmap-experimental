@@ -1,0 +1,35 @@
+,Bladder,Blood,Bronchus (Right),Heart,Kidney (Left),Kidney (Right),Knee (Left),Knee (Right),Large Intestine,Liver,Lung (Left),Lung (Right),Lymph Node,Pancreas,Placenta,Skin,Small Intestine,Spleen,Thymus
+AF,,,,,,,,,,,,,,,,,,,
+ATACseq-bulk,,,,,,,,,,,,,,,,,,,
+bulk-RNA,,,,,,,,,,,,,,,,,,,
+cell-dive,,,,,,,,,,,,,,,,,,,
+CODEX,,,,,,,,,,,,,,,,,,,
+codex,,,,,,,,,,,,,,,,,,,
+DART-FISH,,,,,,,,,,,,,,,,,,,
+IMC,,,,,,,,,,,,,,,,,,,
+IMC3D,,,,,,,,,,,,,,,,,,,
+LC-MS,,,,,,,,,,,,,,,,,,,
+LC-MS Bottom-Up,,,,,,,,,,,,,,,,,,,
+LC-MS_top_down,,,,,,,,,,,,,,,,,,,
+LC-MS-untargeted,,,,,,,,,,,,,,,,,,,
+Lightsheet,,,,,,,,,,,,,,,,,,,
+MALDI-IMS,,,,,,,,,,,,,,,,,,,
+MALDI-IMS-neg,,,,,,,,,,,,,,,,,,,
+MALDI-IMS-pos,,,,,,,,,,,,,,,,,,,
+MS,,,,,,,,,,,,,,,,,,,
+NanoDESI,,,,,,,,,,,,,,,,,,,
+PAS,,,,,,,,,,,,,,,,,,,
+sciATACseq,,,,,,,,,,,,,,,,,,,
+sciRNAseq,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+scRNA-Seq-10x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+scRNAseq-10xGenomics-v3,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+seqFish,,,,,,,,,,,,,,,,,,,
+Slide-seq,,,,,,,,,,,,,,,,,,,
+SNARE-ATACseq2,,,,,,,,,,,,,,,,,,,
+SNARE-RNAseq2,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+SNAREseq,,,,,,,,,,,,,,,,,,,
+snATACseq,,,,,,,,,,,,,,,,,,,
+snRNAseq,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+snRNAseq-10xGenomics-v3,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+TMT-LC-MS,,,,,,,,,,,,,,,,,,,
+WGS,,,,,,,,,,,,,,,,,,,
