@@ -1,8 +1,0 @@
-omap_id,organ,tissue_preservation_method,multiplexed_antibody_based_imaging_method,internal_lab_id,hubmap_dataset_id,hubmap_tissue_block_id,rui_location_id
-OMAP-1,Lymph Node,Fixed Frozen,IBEX,,,,
-OMAP-2,Intestines,fresh_frozen_oct_block,CODEX,,,,
-OMAP-3,Kidney,fresh_frozen_oct_block,CODEX,,,,
-OMAP-4,Skin,ffpe_block,Cell DIVE,,,,
-OMAP-5,Liver,fresh_frozen_oct_block,SIMS,,,,
-OMAP-6,Pancreas,ffpe_block,CODEX,,,,
-OMAP-7,Lung,ffpe_block,Cell DIVE,,,,
