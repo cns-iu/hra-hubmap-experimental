@@ -1,5 +1,5 @@
 configs = {
     "output_filename" : "hubmap_metadata",
     "max_requests_per_sec" : 50,
-    "nexus_token" : "Ag7paXD5MqbJ0na8VMvNa09an5N3e8GQGK0xVNr32ppk34bXawHWC27Gxkk2W7JP9qq6BVBxb9bw86Cno2apBtBxvr",
+    "nexus_token" : "AggwwXaV9ONlvNzyNXngPEV5KynybYp7b5NzPlnG03YrVX52aXFJCW4waB7oNQODO8r8xl1QzNwOPjs0VyMXnfmNJ5",
 }
