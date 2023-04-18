@@ -27,7 +27,7 @@ Contents:
 - Python 3.7 or later
 - Install packages:
   - `aiohttp` : 3.8.1
-  - `tqdm` : any version (4.59.0)
+  - `tqdm` : 4.59.0
 
 
 ## Executing the code
