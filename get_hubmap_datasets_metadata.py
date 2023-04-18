@@ -130,13 +130,13 @@ def get_all_hubmap_metadata(filename, max_requests_per_sec, nexus_token):
         "unpublished_metadata" : unpublished_dataset_metadata,
     }
 
-    with open(f"{filename}_published.json", "w") as outfile:
+    with open(f"data/metadata/{filename}_published.json", "w") as outfile:
         json.dump(published_dataset_metadata, outfile)
 
-    with open(f"{filename}_unpublished.json", "w") as outfile:
+    with open(f"data/metadata/{filename}_unpublished.json", "w") as outfile:
         json.dump(unpublished_dataset_metadata, outfile)
 
-    with open(f"{filename}_all.json", "w") as outfile:
+    with open(f"data/metadata/{filename}_all.json", "w") as outfile:
         json.dump(all_dataset_metadata, outfile)
 
     
@@ -150,25 +150,6 @@ if __name__ == '__main__':
 
     get_all_hubmap_metadata(filename, max_requests_per_sec, nexus_token)
 
-    # Arguments
-    # 1. Output Filename
-    # 2. Maximum Requests per sec.
-
-    # args = sys.argv
-    # assert len(args) <= 2, "The number of arguments should be 2. Ordered as \n1. Output Filename\n2. Maximum Requests per sec"
-    
-    # now = datetime.now()
-    # current_time = now.strftime("%Y_%M_%d_%H_%M_%S")
-
-
-    # if len(args) == 2:
-    #     if isinstance(args[1], str):
-    #         filename = args[1]
-    #     elif isinstance(args[1], int):
-    #         max_requests_per_sec = args[1]
-    # elif len(args) == 3:
-    #     _, filename, max_requests_per_sec = args
-    
 
 
 
