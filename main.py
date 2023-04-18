@@ -41,7 +41,8 @@ def get_all_hubmap_dataset_uuids(nexus_token):
     endpoint = f"datasets/unpublished"
     URL = BASE_URL + endpoint
     resp = requests.get(URL, headers=headers, params=params)
-    
+    if resp.status_code != 200:
+        return {"error" : "Please update the Nexus token in config file."}
     unpublished_dataset_uuids = [dt['uuid'] for dt in resp.json()]
     
     return {
