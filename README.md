@@ -5,16 +5,7 @@ This repository covers the work of acquiring the HuBMAP metadata and generating 
 Contents:
 
     .
-    ├── data                                                # updated (as of 03/06/2023)
-    │   ├── metadata                                    
-    │   │   ├── hubmap_metadata_all.json                    # all (published+unpublished) dataset metadata
-    │   │   ├── hubmap_metadata_published.json              # published datasets metadata
-    │   │   └── hubmap_metadata_unpublished.json            # unpublished datasets metadata
-    │   └── ctpop                             
-    │       ├── ct_pop_published.json                       # published datasets (ctpop logic) metadata
-    │       └── ct_pop_unpublished.json                     # unpublished datasets (ctpop logic) metadata
-    │  
-    ├── config.py                                           # configurations file
+    ├── config.py                                           # configurations file - updated (as of 03/06/2023)
     ├── generate_tables.ipynb                               # ipynb notebook file to generate experimental tables
     ├── main.py                                             # main runner file to generate the HuBMAP datasets metadata json files.
     ├── hubmap_auto.ipynb                                   # ipynb file to perform EDA/building the code.
